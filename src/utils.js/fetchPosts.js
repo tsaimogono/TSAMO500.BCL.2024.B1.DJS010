@@ -16,3 +16,11 @@ export const useFetchPosts = () => {
         const response = await fetch(
           "https://jsonplaceholder.typicode.com/posts"
         );
+        
+        if (!response.ok) {
+          // Throw error if response is not OK
+          throw new Error("Sorry Wrong API Link");
+        }
+
+        // Parse response data as JSON
+        const data = await response.json();
