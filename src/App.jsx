@@ -14,3 +14,27 @@ function App() {
   if (error) {
     return <h1 className="error-message">Data fetching failed</h1>;
   }
+
+  // Render the blog posts
+  return (
+    <>
+      <div className="blog-posts">
+        {/* Display the title of the blog posts section */}
+        <h1>Posts</h1>
+        {/* Map over the posts array and render each post */}
+        {posts.map((post, index) => (
+          <div key={index}>
+            {/* Display the post title with its index */}
+            <h2>
+              {index + 1}. {post.title}
+            </h2>
+            {/* Display the post body */}
+            <p>{post.body}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+export default App;
