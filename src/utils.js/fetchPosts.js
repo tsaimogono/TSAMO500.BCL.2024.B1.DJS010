@@ -35,3 +35,11 @@ export const useFetchPosts = () => {
         setIsLoading(false);
       }
     };
+    
+    // Call the fetchPosts function
+    fetchPosts();
+  }, []);
+
+  // Return an object with posts, error, and isLoading states
+  return { posts, error, isLoading };
+};
